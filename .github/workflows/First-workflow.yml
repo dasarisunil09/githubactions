@@ -25,6 +25,6 @@ jobs:
         - name: setting an error message
           run: echo "::error::Missing Semicolon"
         - name: Setting an error msg with params
-          run: echo "::error:: msg"
+          run: echo "::error::msg"
         # - name: ErrorStep
         #   run: doesnotexits
