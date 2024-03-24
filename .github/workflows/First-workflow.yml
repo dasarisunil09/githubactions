@@ -1,6 +1,9 @@
 name: First Workflow
 
 on: [push]
+# defaults:
+#     run:
+#         shell: bash
 jobs:
   run-shell-commands:
     runs-on: ubuntu-latest
@@ -26,7 +29,7 @@ jobs:
           run: echo "::error::Missing Semicolon"
         - name: Setting an error msg with params
           run: echo "::error::msg"
-  display-wd-info:
+  display-wd-info-ubuntu:
     runs-on: ubuntu-latest
     steps:
         - name: Disply
@@ -38,9 +41,14 @@ jobs:
             echo $GITHUB_WORKSPACE     
   display-wd-info-windows:
     runs-on: windows-latest
+    defaults:
+        run:
+            shell: pwsh
     steps:
         - name: Disply
           run: |
-            echo $GITHUB_SHA
-            echo $GITHUB_RESPOSITORY
-            echo $GITHUB_WORKSPACE 
+            Get-Location
+            dir
+            echo $env:GITHUB_SHA
+            echo $env:GITHUB_RESPOSITORY
+            echo $env:GITHUB_WORKSPACE 
