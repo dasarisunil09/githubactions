@@ -2,27 +2,27 @@ name: Repository Events
 # on: [push, pull_request, issues]
 on:
     push:
-        branches:
-            - main
-            - "feature/*"
-            - "feature/**"
-            - "!feature/test"
-        branches-ignore:
-            - dev
-        tags:
-            - v1.*
-            - '!v1.1.1'
-        paths:
-            - "**.js"
-            - "**.txt"
-            - "!helloworld.txt"
+        # branches:
+        #     - main
+        #     - "feature/*"
+        #     - "feature/**"
+        #     - "!feature/test"
+        # branches-ignore:
+        #     - dev
+        # tags:
+        #     - v1.*
+        #     - '!v1.1.1'
+        # paths:
+        #     - "**.js"
+        #     - "**.txt"
+        #     - "!helloworld.txt"
     pull_request:
         types: [opened, assigned, reopened, synchronize]
-        branches:
-            - main
-        paths:
-            - "**.js"
-            - "**.txt"
+        # branches:
+        #     - main
+        # paths:
+        #     - "**.js"
+        #     - "**.txt"
     issues:
         types: [opened]
 jobs:
