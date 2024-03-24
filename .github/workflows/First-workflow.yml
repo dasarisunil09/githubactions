@@ -26,5 +26,21 @@ jobs:
           run: echo "::error::Missing Semicolon"
         - name: Setting an error msg with params
           run: echo "::error::msg"
-        # - name: ErrorStep
-        #   run: doesnotexits
+  display-wd-info:
+    runs-on: ubuntu-latest
+    steps:
+        - name: Disply
+          run: |
+            pwd
+            ls -a
+            echo $GITHUB_SHA
+            echo $GITHUB_RESPOSITORY
+            echo $GITHUB_WORKSPACE     
+  display-wd-info-windows:
+    runs-on: windows-latest
+    steps:
+        - name: Disply
+          run: |
+            echo $GITHUB_SHA
+            echo $GITHUB_RESPOSITORY
+            echo $GITHUB_WORKSPACE 
