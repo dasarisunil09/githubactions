@@ -1,4 +1,4 @@
-name: Checkout
+name: Simple-actions
 on: [push]
 jobs:
     simple-action:
@@ -9,4 +9,4 @@ jobs:
               with:
                 who-to-greet: Sunil
             - name: Log Greeting Time
-              run: echo "${{ steps.greet.Output.Time }}"
+              run: echo "${{ steps.greet.Outputs.Time }}"
