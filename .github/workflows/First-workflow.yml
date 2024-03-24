@@ -4,6 +4,7 @@ on: [push]
 # defaults:
 #     run:
 #         shell: bash
+#         working-directory: /de/de
 jobs:
   run-shell-commands:
     runs-on: ubuntu-latest
@@ -38,7 +39,10 @@ jobs:
             ls -a
             echo $GITHUB_SHA
             echo $GITHUB_RESPOSITORY
-            echo $GITHUB_WORKSPACE     
+            echo $GITHUB_WORKSPACE
+        - name: Change Working Dir
+          working-directory: /home/runner
+          run: pwd   
   display-wd-info-windows:
     runs-on: windows-latest
     defaults:
@@ -52,3 +56,8 @@ jobs:
             echo $env:GITHUB_SHA
             echo $env:GITHUB_RESPOSITORY
             echo $env:GITHUB_WORKSPACE 
+        - name: Python Shell
+          shell: python
+          run: |
+            import platform
+            print(platform.processor())
